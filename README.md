@@ -23,7 +23,7 @@ The goal of this library is to provide a reusable, lifecycle-safe, and Compose-f
 <details>
 <summary>Click to watch demo</summary>
 
-<video src="https://github.com/user-attachments/assets/d521221e-6792-4939-9807-4087b95209be"
+<video src="https://github.com/user-attachments/assets/a3c9c164-7932-4a73-9f71-9c85fcdf81f3"
        width="360"
        controls>
 </video>
@@ -47,7 +47,7 @@ dependencyResolutionManagement {
 Add dependency to your app module build.gradle.kts:
 
 ```kotlin
-implementation("com.github.pascaladitia:smart-notification-listener:1.0.0")
+implementation("com.github.pascaladitia:smart-notification-listener:1.0.1")
 ```
 
 ---
