@@ -34,18 +34,21 @@ The goal of this library is to provide a reusable, lifecycle-safe, and Compose-f
 ## Installation (GitHub / JitPack)
 
 Add JitPack repository to your settings.gradle.kts:
-
-    dependencyResolutionManagement {
-        repositories {
-            google()
-            mavenCentral()
-            maven("https://jitpack.io")
-        }
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
     }
+}
+```
 
 Add dependency to your app module build.gradle.kts:
 
-    implementation("com.github.pascaladitia:smart-notification-listener:1.0.0")
+```kotlin
+implementation("com.github.pascaladitia:smart-notification-listener:1.0.0")
+```
 
 ---
 
@@ -74,9 +77,11 @@ Notifications are exposed as a StateFlow and can be collected in a lifecycle-awa
 
 Example with Jetpack Compose:
 
-    val notifications by SmartNotificationListener
-        .notifications
-        .collectAsStateWithLifecycle()
+```kotlin
+val notifications by SmartNotificationListener
+    .notifications
+    .collectAsStateWithLifecycle()
+```
 
 ---
 
@@ -84,16 +89,18 @@ Example with Jetpack Compose:
 
 Example using LazyColumn:
 
-    LazyColumn {
-        items(
-            items = notifications,
-            key = { it.packageName + "-" + it.id + "-" + it.postedAt }
-        ) { notification ->
-            Text(
-                text = notification.appName + ": " + notification.title
-            )
-        }
+```kotlin
+LazyColumn {
+    items(
+        items = notifications,
+        key = { it.packageName + "-" + it.id + "-" + it.postedAt }
+    ) { notification ->
+        Text(
+            text = notification.appName + ": " + notification.title
+        )
     }
+}
+```
 
 Important:
 - Android does not guarantee notification IDs are unique
