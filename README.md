@@ -35,19 +35,19 @@ The goal of this library is to provide a reusable, lifecycle-safe, and Compose-f
 
 Add JitPack repository to your settings.gradle.kts:
 ```kotlin
- dependencyResolutionManagement {
-        repositories {
-            google()
-            mavenCentral()
-            maven("https://jitpack.io")
-        }
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
     }
+}
 ```
 
 Add dependency to your app module build.gradle.kts:
 
 ```kotlin
- implementation("com.github.pascaladitia:smart-notification-listener:1.0.0")
+implementation("com.github.pascaladitia:smart-notification-listener:1.0.0")
 ```
 
 ---
@@ -78,9 +78,9 @@ Notifications are exposed as a StateFlow and can be collected in a lifecycle-awa
 Example with Jetpack Compose:
 
 ```kotlin
- val notifications by SmartNotificationListener
-       .notifications
-       .collectAsStateWithLifecycle()
+val notifications by SmartNotificationListener
+    .notifications
+    .collectAsStateWithLifecycle()
 ```
 
 ---
@@ -91,15 +91,15 @@ Example using LazyColumn:
 
 ```kotlin
 LazyColumn {
-        items(
-            items = notifications,
-            key = { it.packageName + "-" + it.id + "-" + it.postedAt }
-        ) { notification ->
-            Text(
-                text = notification.appName + ": " + notification.title
-            )
-        }
+    items(
+        items = notifications,
+        key = { it.packageName + "-" + it.id + "-" + it.postedAt }
+    ) { notification ->
+        Text(
+            text = notification.appName + ": " + notification.title
+        )
     }
+}
 ```
 
 Important:
