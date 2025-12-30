@@ -1,11 +1,13 @@
 package com.pascal.smart_notification_listener.core
 
+import android.R.attr.x
 import android.app.Notification
 import android.content.Context
 import android.service.notification.StatusBarNotification
 import androidx.core.app.NotificationCompat
 import com.pascal.smart_notification_listener.model.NotifMeta
 import com.pascal.smart_notification_listener.model.NotifType
+import com.pascal.smart_notification_listener.utils.extractSafeAvatar
 
 internal fun StatusBarNotification.toNotifMeta(ctx: Context): NotifMeta? {
     val notification = notification ?: return null
@@ -13,6 +15,7 @@ internal fun StatusBarNotification.toNotifMeta(ctx: Context): NotifMeta? {
 
     val title = extras.getCharSequence(Notification.EXTRA_TITLE)?.toString()
     val text = extras.getCharSequence(Notification.EXTRA_TEXT)?.toString()
+    val avatarBitmap = extractSafeAvatar(extras, notification, ctx)
 
     val appName = runCatching {
         val pm = ctx.packageManager
@@ -27,7 +30,7 @@ internal fun StatusBarNotification.toNotifMeta(ctx: Context): NotifMeta? {
         text = text,
         postedAt = postTime,
         messages = emptyList(),
-        avatar = null,
+        avatar = avatarBitmap,
         isActive = true,
         notifType = detectNotifType(notification, title, text)
     )
