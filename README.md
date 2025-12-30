@@ -23,7 +23,7 @@ The goal of this library is to provide a reusable, lifecycle-safe, and Compose-f
 <details>
 <summary>Click to watch demo</summary>
 
-<video src="https://github.com/user-attachments/assets/a3c9c164-7932-4a73-9f71-9c85fcdf81f3"
+<video src="https://github.com/user-attachments/assets/bddda628-e990-4b29-aad9-76b4725f506d"
        width="360"
        controls>
 </video>
