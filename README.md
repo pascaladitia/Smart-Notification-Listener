@@ -177,7 +177,7 @@ This approach ensures better UX, Play Store compliance, and library reusability.
 
 MIT License
 
-Copyright (c) 2025 Pascal
+Copyright (c) 2026 Pascal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files to deal in the Software without restriction.
 
