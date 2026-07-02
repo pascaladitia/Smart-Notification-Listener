@@ -142,7 +142,7 @@ This approach ensures better UX, Play Store compliance, and library reusability.
 5. Updates are emitted via StateFlow
 6. UI layers collect and react to updates
 
----
+--- 
 
 ## Known Limitations
 
